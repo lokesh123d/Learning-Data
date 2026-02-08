@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #1e1b1b;
+    color: white ;
+    /* font-size: 20px; */
+}
+
+.modal{
+    background-color:white;
+    color: black;
+    height: 160px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+}
+.yes{
+    padding: 10px 20px;
+    background-color:red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.no{
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
