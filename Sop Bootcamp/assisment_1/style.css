@@ -1,0 +1,61 @@
+*{
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+  background:#f4f6f8;
+  padding:20px;
+}
+
+.controls,.search-filter{
+  display:flex;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.board{
+  display:flex;
+  gap:20px;
+  margin-top:20px;
+}
+
+.section{
+  width:50%;
+  background:#fff;
+  padding:10px;
+  border-radius:6px;
+}
+
+.task-card{
+  background:#eaeaea;
+  padding:10px;
+  margin:8px 0;
+  border-radius:6px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:grab;
+}
+
+.task-left{
+  display:flex;
+  flex-direction:column;
+}
+
+.task-actions button{
+  margin-left:5px;
+}
+
+.completed{
+  text-decoration:line-through;
+  opacity:0.6;
+}
+
+.low{border-left:5px solid green;}
+.medium{border-left:5px solid orange;}
+.high{border-left:5px solid red;}
+
+.dragging{
+  opacity:0.4;
+}

@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid lightblue;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.stat-item {
+    background: lightblue;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: black;
+}
+
+.stat-label {
+    font-weight: bold;
+}
+
+.stat-value {
+    font-weight: bold;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#addBtn {
+    padding: 10px 20px;
+    background: lightblue;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#addBtn:hover {
+    background: #87CEEB;
+}
+
+.tasks-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.task-section h2 {
+    color: black;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid lightblue;
+}
+
+.task-container {
+    min-height: 150px;
+    background: white;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.task-card {
+    background: white;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.task-card.completed .task-name {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.task-card.high-priority {
+    border-left: 3px solid black;
+}
+
+.task-card.medium-priority {
+    border-left: 3px solid lightblue;
+}
+
+.task-card.low-priority {
+    border-left: 3px solid #E0F4FF;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.task-name {
+    flex: 1;
+    color: black;
+}
+
+.task-name.editing {
+    display: none;
+}
+
+.task-edit-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid lightblue;
+    border-radius: 3px;
+}
+
+.priority-selector {
+    padding: 5px;
+    border: 1px solid lightblue;
+    border-radius: 3px;
+    margin-right: 10px;
+    background: white;
+}
+
+.task-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: 1px solid lightblue;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+
+.btn:hover {
+    background: lightblue;
+}
+
+.complete-btn {
+    background: lightblue;
+}
+
+.edit-btn {
+    background: white;
+}
+
+.save-btn {
+    background: lightblue;
+}
+
+.delete-btn {
+    background: white;
+}
+
+.empty-message {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}

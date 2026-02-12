@@ -16,6 +16,9 @@ let count = 0;
 submitButton.addEventListener('click', addText);
 
 function addText(e) {
+    if((input.value).trim() == ""){
+        return;
+    }
     const btn = document.createElement('button');
     btn.textContent = 'Open Modal';
     const data = input.value;
@@ -40,7 +43,11 @@ modal.appendChild(yesBtn);
 modal.appendChild(noBtn);
 document.body.appendChild(modal);
 btn.addEventListener('click', function(e) {
-        modal.style.display = 'flex';
+    const count = countCheck();
+    const h2 = document.createElement('h2');
+    h2.textContent = count;
+    modal.appendChild(h2);
+    modal.style.display = 'flex';
     });
 
 yesBtn.addEventListener("click", function() {
@@ -62,10 +69,23 @@ selectAll.addEventListener('click', function() {
         check.checked = false;
     } else {    
     check.checked  = true;
-    count++
-    console.log(count)
     }
 });
 
   
+}
+
+function countCheck(){
+    const childrens = container.querySelectorAll('div');
+    let checkedCount = 0;
+    
+    childrens.forEach(function(child){
+        const checkbox = child.querySelector('input');
+        // console.log(checkbox.checked);
+        if(checkbox.checked) {
+            checkedCount++;
+        }
+    
+    })
+   return checkedCount;
 }

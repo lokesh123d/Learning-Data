@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do's</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="script2.js" defer></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="create">
+            <h1>To Do List</h1>
+            <input type="text" class="taskInput" placeholder="Enter a task">
+            <select name="taskCategory" class="taskCategory">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button class="addBtn">Add Task</button>
+        </div>
+        <div class="search">
+            <input type="text" class="searchInput" placeholder="Search tasks">
+            <select name="searchCategory" class="searchCategory">
+                <option value="all">All</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            <select name="searchStatus" class="searchStatus">
+                <option value="all">All</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+            <button class="searchBtn">Search</button>
+        </div>
+        <div class="counts">
+            <span class="totalCount">Total: 0</span>
+            <span class="pendingCount">Pending: 0</span>
+            <span class="completedCount">Completed: 0</span>
+        </div>
+    </div>
+    <div class="down">
+        <div class="pending">
+            <h2>Pending Tasks</h2>
+            <div class="pendingList">
+               
+            </div>
+        </div>
+        <div class="completed">
+            <h2>Completed Tasks</h2>
+            <div class="completedList"></div>
+        </div>
+    </div>
+
+<div class="edit-modal">
+    <input type="hidden" class="edit-index">
+    
+        <input type="text" class="edit-input">
+         <select name="taskCategory-edit" class="taskCategory-edit">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        <button class="after-edit">Edit Task</button>
+    </div>
+ 
+</body>
+
+</html>

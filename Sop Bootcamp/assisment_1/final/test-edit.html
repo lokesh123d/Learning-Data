@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Button Test</title>
+    <style>
+        body {
+            padding: 20px;
+            font-family: Arial;
+        }
+
+        .task-card {
+            border: 1px solid lightblue;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .task-header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .task-name {
+            flex: 1;
+        }
+
+        .task-name.editing {
+            display: none;
+        }
+
+        .task-edit-input {
+            flex: 1;
+            padding: 5px;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            margin: 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit Button Test</h1>
+    <p>Click "Edit" to test if editing works</p>
+
+    <div id="test-area"></div>
+
+    <script>
+        const testArea = document.getElementById('test-area');
+
+        // Create a test task
+        const card = document.createElement('div');
+        card.className = 'task-card';
+        card.innerHTML = `
+            <div class="task-header">
+                <span class="task-name">Test Task - Click Edit to modify</span>
+            </div>
+            <button class="btn edit-btn">Edit</button>
+        `;
+        testArea.appendChild(card);
+
+        // Add click listener
+        testArea.addEventListener('click', (e) => {
+            if (e.target.classList.contains('edit-btn')) {
+                console.log('Edit button clicked!');
+                alert('Edit button is WORKING! ✅');
+
+                const card = e.target.parentElement;
+                const name = card.querySelector('.task-name');
+                const header = card.querySelector('.task-header');
+
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = 'task-edit-input';
+                input.value = name.textContent;
+
+                name.classList.add('editing');
+                header.appendChild(input);
+
+                e.target.textContent = 'Save';
+                e.target.classList.remove('edit-btn');
+                e.target.classList.add('save-btn');
+                input.focus();
+            }
+
+            else if (e.target.classList.contains('save-btn')) {
+                console.log('Save button clicked!');
+
+                const card = e.target.parentElement;
+                const input = card.querySelector('.task-edit-input');
+                const name = card.querySelector('.task-name');
+
+                name.textContent = input.value;
+                name.classList.remove('editing');
+                input.remove();
+
+                e.target.textContent = 'Edit';
+                e.target.classList.remove('save-btn');
+                e.target.classList.add('edit-btn');
+
+                alert('Task saved successfully! ✅');
+            }
+        });
+    </script>
+</body>
+
+</html>
